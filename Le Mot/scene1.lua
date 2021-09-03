@@ -21,15 +21,15 @@ function scene:create( event )
 
     local lemot = display.newImage("images/lemot.png")
     lemot.x = display.contentWidth/2
-    lemot.y = display.contentHeight/2 - 500
+    lemot.y = display.contentHeight/2 - 550
 
     local oflanguage = display.newImage("images/oflanguage.png")
     oflanguage.x = display.contentWidth/2 + 200
-    oflanguage.y = display.contentHeight/2 - 850
+    oflanguage.y = display.contentHeight/2 - 900
 
     local carnation = display.newImage("images/carnation.png")
     carnation.x = display.contentWidth/2 + 550
-    carnation.y = display.contentHeight/2 + 1000
+    carnation.y = display.contentHeight/2 + 950
 
     local polygonSequence = {
         -- consecutive frames sequence
@@ -48,18 +48,9 @@ function scene:create( event )
 
     local polygon = display.newSprite( polygonSheet, polygonSequence )
     polygon.x = display.contentWidth/2
-    polygon.y = display.contentHeight/2 + 250
+    polygon.y = display.contentHeight/2 + 200
 
-    function bubbling( event )
-      if ( event.phase == "began" ) then
-          polygon:play()
-      elseif ( event.phase == "ended" ) then
-          polygon:pause()
-      end
-      return true
-    end
-
-
+    polygon:play()
 
     function changeScene( event )
       if ( event.phase == "began" ) then
@@ -82,7 +73,7 @@ function scene:create( event )
     sceneGroup:insert( objectsGroup )
     sceneGroup:insert( textGroup )
 
-    carnation:addEventListener( "touch", bubbling)
+
     polygon:addEventListener( "touch", changeScene)
 
 end

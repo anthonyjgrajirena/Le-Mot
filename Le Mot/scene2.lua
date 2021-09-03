@@ -5,6 +5,10 @@ local scene = composer.newScene()
 -- create()
 function scene:create( event )
 
+    local backGroup = display.newGroup()
+    local objectsGroup = display.newGroup()
+    local textGroup = display.newGroup()
+
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
     local background = display.newImage( "images/mountainbackground.png" )
@@ -15,15 +19,21 @@ function scene:create( event )
 
     local burningSnowflake = display.newImage("images/burningsnowflake.png")
     burningSnowflake.x = display.contentWidth/2
-    burningSnowflake.y = display.contentHeight/2 - 900
+    burningSnowflake.y = display.contentHeight/2 - 1000
 
     sceneGroup:insert( burningSnowflake )
 
     local fromLove = display.newImage("images/fromlove.png")
     fromLove.x = display.contentWidth/2
-    fromLove.y = display.contentHeight/2 - 650
+    fromLove.y = display.contentHeight/2 - 750
 
     sceneGroup:insert( fromLove )
+
+    local dream = display.newImage("images/dream.png")
+    dream.x = display.contentWidth/2 + 650
+    dream.y = display.contentHeight/2 + 1050
+
+    sceneGroup:insert( dream )
 
     local snowflakeSequence = {
         -- consecutive frames sequence
@@ -42,19 +52,33 @@ function scene:create( event )
 
     local snowflake = display.newSprite( snowflakeSheet, snowflakeSequence )
     snowflake.x = display.contentWidth/2
-    snowflake.y = display.contentHeight/2 + 250
+    snowflake.y = display.contentHeight/2 + 150
 
-    function bubbling( event )
+    function changeScene( event )
       if ( event.phase == "began" ) then
-          snowflake:play()
+
       elseif ( event.phase == "ended" ) then
-          snowflake:pause()
+              composer.gotoScene("scene3", {effect = "crossFade", time = 2500})
+              --objectsGroup:removeSelf()
+              --textGroup:removeSelf()
       end
       return true
     end
 
-    snowflake:addEventListener( "touch", bubbling)
-    --snowflake:addEventListener( "touch", changeScene)
+
+    backGroup:insert( background )
+    textGroup:insert( burningSnowflake )
+    textGroup:insert( fromLove )
+    textGroup:insert( dream )
+    objectsGroup:insert( snowflake )
+
+    sceneGroup:insert( backGroup )
+    sceneGroup:insert( objectsGroup )
+    sceneGroup:insert( textGroup )
+
+    snowflake:play()
+
+    snowflake:addEventListener( "touch", changeScene)
 
 end
 
