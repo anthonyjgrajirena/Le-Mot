@@ -3,4 +3,4 @@ display.setStatusBar ( display.HiddenStatusBar )
 local composer = require("composer")
 
 
-composer.gotoScene("scene1")
+composer.gotoScene("scene5")

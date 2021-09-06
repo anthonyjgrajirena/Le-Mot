@@ -19,15 +19,15 @@ function scene:create( event )
     background.x = display.contentWidth/2
     background.y = display.contentHeight/2
 
-    local lemot = display.newImage("images/lemot.png")
+    local lemot = display.newImage("images/lemot(shadow).png")
     lemot.x = display.contentWidth/2
     lemot.y = display.contentHeight/2 - 550
 
-    local oflanguage = display.newImage("images/oflanguage.png")
+    local oflanguage = display.newImage("images/oflanguage(shadow).png")
     oflanguage.x = display.contentWidth/2 + 200
     oflanguage.y = display.contentHeight/2 - 900
 
-    local carnation = display.newImage("images/carnation.png")
+    local carnation = display.newImage("images/carnation(shadow).png")
     carnation.x = display.contentWidth/2 + 550
     carnation.y = display.contentHeight/2 + 950
 

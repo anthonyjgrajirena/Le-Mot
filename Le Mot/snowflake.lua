@@ -1,7 +1,7 @@
 --
 -- created with TexturePacker - https://www.codeandweb.com/texturepacker
 --
--- $TexturePacker:SmartUpdate:a95eca9551293b25d14f28d237262569:28108dc57061114e911c46c8f0bdbf49:b4ca6abdcb35ac968ad745feb4d104a2$
+-- $TexturePacker:SmartUpdate:3f3b98ab373d9f1bf4cf066c22a228d6:25146696cef9f30ef01dcec11d75efdc:b4ca6abdcb35ac968ad745feb4d104a2$
 --
 -- local sheetInfo = require("mysheet")
 -- local myImageSheet = graphics.newImageSheet( "mysheet.png", sheetInfo:getSheet() )
@@ -15,106 +15,66 @@ SheetInfo.sheet =
     frames = {
     
         {
-            -- polygon1
-            x=1,
-            y=2369,
-            width=789,
-            height=776,
-
-        },
-        {
-            -- polygon2
-            x=1,
-            y=1458,
-            width=867,
-            height=909,
-
-        },
-        {
-            -- polygon3
-            x=2549,
-            y=1242,
-            width=878,
-            height=880,
-
-        },
-        {
-            -- polygon4
-            x=2549,
-            y=2124,
-            width=875,
-            height=871,
-
-            sourceX = 2,
-            sourceY = 0,
-            sourceWidth = 879,
-            sourceHeight = 871
-        },
-        {
             -- snowflake1
             x=1,
             y=1,
-            width=1289,
-            height=1455,
+            width=903,
+            height=1019,
 
-            sourceX = 58,
-            sourceY = 71,
-            sourceWidth = 1413,
-            sourceHeight = 1587
+            sourceX = 41,
+            sourceY = 49,
+            sourceWidth = 989,
+            sourceHeight = 1111
         },
         {
             -- snowflake2
-            x=1292,
-            y=1426,
-            width=1255,
-            height=1413,
+            x=880,
+            y=1022,
+            width=879,
+            height=991,
 
-            sourceX = 76,
-            sourceY = 94,
-            sourceWidth = 1413,
-            sourceHeight = 1587
+            sourceX = 53,
+            sourceY = 64,
+            sourceWidth = 989,
+            sourceHeight = 1111
         },
         {
             -- snowflake3
-            x=1292,
-            y=1,
-            width=1251,
-            height=1423,
+            x=1,
+            y=1022,
+            width=877,
+            height=997,
 
-            sourceX = 95,
-            sourceY = 63,
-            sourceWidth = 1413,
-            sourceHeight = 1587
+            sourceX = 66,
+            sourceY = 44,
+            sourceWidth = 989,
+            sourceHeight = 1111
         },
         {
             -- snowflake4
-            x=2545,
+            x=906,
             y=1,
-            width=1141,
-            height=1239,
+            width=799,
+            height=867,
 
-            sourceX = 141,
-            sourceY = 207,
-            sourceWidth = 1413,
-            sourceHeight = 1587
+            sourceX = 98,
+            sourceY = 145,
+            sourceWidth = 989,
+            sourceHeight = 1111
         },
     },
 
-    sheetContentWidth = 3687,
-    sheetContentHeight = 3146
+    sheetContentWidth = 1760,
+    sheetContentHeight = 2020
 }
 
 SheetInfo.frameIndex =
 {
 
-    ["polygon1"] = 1,
-    ["polygon2"] = 2,
-    ["polygon3"] = 3,
-    ["polygon4"] = 4,
-    ["snowflake1"] = 5,
-    ["snowflake2"] = 6,
-    ["snowflake3"] = 7,
-    ["snowflake4"] = 8,
+    ["snowflake1"] = 1,
+    ["snowflake2"] = 2,
+    ["snowflake3"] = 3,
+    ["snowflake4"] = 4,
 }
 
 function SheetInfo:getSheet()

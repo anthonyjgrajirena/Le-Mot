@@ -11,48 +11,54 @@ function scene:create( event )
 
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
-    local background = display.newImage( "images/mountainbackground.png" )
+    local background = display.newImage( "images/cloudbackground.png" )
     background.x = display.contentWidth/2
     background.y = display.contentHeight/2
 
     sceneGroup:insert( background )
 
-    local burningSnowflake = display.newImage("images/burningsnowflake.png")
-    burningSnowflake.x = display.contentWidth/2
-    burningSnowflake.y = display.contentHeight/2 - 1000
+    local fireworks = display.newImage("images/fireworks(shadow).png")
+    fireworks.x = display.contentWidth/2 - 75
+    fireworks.y = display.contentHeight/2 - 600
 
-    sceneGroup:insert( burningSnowflake )
+    sceneGroup:insert( fireworks )
 
-    local fromLove = display.newImage("images/fromlove.png")
-    fromLove.x = display.contentWidth/2
-    fromLove.y = display.contentHeight/2 - 750
+    local blackflowers = display.newImage("images/blackflowers(shadow).png")
+    blackflowers.x = display.contentWidth/2
+    blackflowers.y = display.contentHeight/2 + 650
 
-    sceneGroup:insert( fromLove )
+    sceneGroup:insert( blackflowers )
 
-    local dream = display.newImage("images/dream.png")
-    dream.x = display.contentWidth/2 + 650
-    dream.y = display.contentHeight/2 + 1050
-
-    sceneGroup:insert( dream )
-
-    local snowflakeSequence = {
+    local butterflySequence = {
         -- consecutive frames sequence
         {
             name = "cycle",
             start = 1,
-            count = 8,
-            time = 1600,
+            count = 4,
+            time = 800,
             loopCount = 0,
             loopDirection = "bounce"
         }
     }
 
-    local sheetInfo = require("snowflake")
-    local snowflakeSheet = graphics.newImageSheet( "images/snowflake.png", sheetInfo:getSheet() )
+    local sheetInfo = require("butterflies")
+    local butterflySheet = graphics.newImageSheet( "images/butterflies.png", sheetInfo:getSheet() )
 
-    local snowflake = display.newSprite( snowflakeSheet, snowflakeSequence )
-    snowflake.x = display.contentWidth/2
-    snowflake.y = display.contentHeight/2 + 150
+    local butterfly1 = display.newSprite( butterflySheet, butterflySequence )
+    butterfly1.x = display.contentWidth/2
+    butterfly1.y = display.contentHeight/2 + 985
+
+    local butterfly2 = display.newSprite( butterflySheet, butterflySequence )
+    butterfly2.x = display.contentWidth/2
+    butterfly2.y = display.contentHeight/2 + 300
+
+    local butterfly3 = display.newSprite( butterflySheet, butterflySequence )
+    butterfly3.x = display.contentWidth/2
+    butterfly3.y = display.contentHeight/2 - 225
+
+    local butterfly4 = display.newSprite( butterflySheet, butterflySequence )
+    butterfly4.x = display.contentWidth/2
+    butterfly4.y = display.contentHeight/2 - 950
 
     function changeScene( event )
       if ( event.phase == "began" ) then
@@ -67,18 +73,26 @@ function scene:create( event )
 
 
     backGroup:insert( background )
-    textGroup:insert( burningSnowflake )
-    textGroup:insert( fromLove )
-    textGroup:insert( dream )
-    objectsGroup:insert( snowflake )
+    textGroup:insert( fireworks )
+    textGroup:insert( blackflowers )
+    objectsGroup:insert( butterfly1 )
+    objectsGroup:insert( butterfly2 )
+    objectsGroup:insert( butterfly3 )
+    objectsGroup:insert( butterfly4 )
 
     sceneGroup:insert( backGroup )
     sceneGroup:insert( objectsGroup )
     sceneGroup:insert( textGroup )
 
-    snowflake:play()
+    butterfly1:play()
+    butterfly2:play()
+    butterfly3:play()
+    butterfly4:play()
 
-    snowflake:addEventListener( "touch", changeScene)
+    butterfly1:addEventListener( "touch", changeScene)
+    butterfly2:addEventListener( "touch", changeScene)
+    butterfly3:addEventListener( "touch", changeScene)
+    butterfly4:addEventListener( "touch", changeScene)
 
 end
 
